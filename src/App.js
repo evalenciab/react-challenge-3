@@ -10,7 +10,9 @@ export default function App() {
 
   useEffect(() => {
     if (name.length > 0) {
-      const filtered = pokemons.filter((poke) => poke.name === name.trim());
+      const filtered = pokemons.filter((poke) =>
+        poke.name.includes(name.trim())
+      );
       setPokemonsFiltered(filtered);
     }
   }, [name]);
